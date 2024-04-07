@@ -21,12 +21,24 @@ namespace BookingDashboardWPF
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = prenotazioni;
+            this.DataContext = prenotazioni;
         }
 
         private void BtnAggiorna_Click(object sender, RoutedEventArgs e)
         {
             prenotazioni.Aggiorna();
+            TxtStatistica1.Text = prenotazioni.Statistica1.ToString("N2");
+            TxtStatistica2.Text = prenotazioni.Statistica2.ToString("N2");
+
+            // DA SISTEMARE
+            // Accrocchio ignorante per far aggiornare il grafico a linea e barre:
+            // siccome l'aggiornamento avviene solo al ridimensionamento
+            // della finestra, ogni volta che si preme il pulsante
+            // si aumenta e si diminuisce di un pixel l'altezza della finestra
+            // non funziona se la finestra è massimizzata
+            var height = Application.Current.MainWindow.Height;
+            Application.Current.MainWindow.Height = height+1;
+            Application.Current.MainWindow.Height = height;
         }
     }
 }

@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:BookingDashboardWPF"
         mc:Ignorable="d"
         Title="Booking Dashboard"        
-        xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF">
+        xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+        Height="700"
+        Width="1024">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -28,14 +30,14 @@
             Series="{Binding AnotherSeries}"
             MaxAngle="360">
         </lvc:PieChart>
-        <TextBlock Text="Statistica 1" 
+        <TextBlock Text=" " 
                    x:Name="TxtStatistica1" 
                    Grid.Column="0" 
                    Grid.Row="1"
                    FontSize="30"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-        <TextBlock Text="Statistica 2" 
+        <TextBlock Text=" " 
                    x:Name="TxtStatistica2" 
                    Grid.Column="1" 
                    Grid.Row="1"
